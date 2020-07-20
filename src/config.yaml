@@ -1,8 +1,10 @@
 tags: [""]
 
+
 general:
   debug: False
   gpus: [0]
+
 
 hparams:
   model_name: "efficientnet-b3"
@@ -11,21 +13,18 @@ hparams:
   aug_pad_size: 512
   aug_border_mode: 0
 
-  grad_acc: 1
-
   lr: 0.001
-  batch_size: 32
-
   optimizer_period: 60000
 
-  smoothing: 0.05
+  batch_size: 32
+  grad_acc: 1
 
   metric_period: 10
 
-  data_shuffle: False
+  smoothing: 0.05
 
   fold: 0
-
+  
 
 neptune:
   api_token: "HIDDEN"

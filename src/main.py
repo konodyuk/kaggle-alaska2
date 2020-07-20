@@ -362,6 +362,7 @@ config_option = click.option(
     ),
 )
 
+
 ckpt_option = click.option(
     "--ckpt",
     "checkpoint_path", 
@@ -374,9 +375,11 @@ ckpt_option = click.option(
     ),
 )
 
+
 @click.group()
 def cli():
     pass
+
 
 @cli.command()
 @config_option
@@ -471,7 +474,6 @@ def from_config(config, checkpoint_path=None, create_loggers=True, copy_sources=
         logger=neptune_logger,
         
         gpus=config.general.gpus,
-        fast_dev_run=config.general.debug and False,
         default_root_dir=ROOT_PATH,
         
         gradient_clip_val=0.05,
